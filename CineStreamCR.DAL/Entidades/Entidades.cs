@@ -127,3 +127,4 @@ public sealed class PlaybackProgress
     public bool IsCompleted { get; set; }
     public DateTime LastPlayedAt { get; set; } = DateTime.UtcNow;
 }
+
