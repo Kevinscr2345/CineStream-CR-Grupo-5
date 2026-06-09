@@ -72,3 +72,4 @@ public sealed record UpdateWatchListRequest(string Name, string? Description);
 public sealed record ReviewRequest(int Score, string? Comment);
 public sealed record PlaybackRequest(int MovieId, double CurrentSecond, double TotalSeconds, bool IsCompleted);
 public sealed record PlaybackDto(int MovieId, double CurrentSecond, double TotalSeconds, bool IsCompleted, DateTime LastPlayedAt);
+

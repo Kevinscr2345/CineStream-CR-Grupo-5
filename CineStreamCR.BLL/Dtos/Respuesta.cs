@@ -13,3 +13,4 @@ public sealed class Respuesta<T>
     public static Respuesta<T> Error(string mensaje, int codigo = 400) =>
         new() { EsCorrecto = false, Mensaje = mensaje, Codigo = codigo };
 }
+
