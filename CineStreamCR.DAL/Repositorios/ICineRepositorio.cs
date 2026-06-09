@@ -33,3 +33,4 @@ public interface ICineRepositorio
     Task<PlaybackProgress?> GetPlaybackAsync(Guid userId, int movieId, CancellationToken ct = default);
     Task<PlaybackProgress> SavePlaybackAsync(PlaybackProgress progress, CancellationToken ct = default);
 }
+
