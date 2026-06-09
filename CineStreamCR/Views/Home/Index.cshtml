@@ -1,0 +1,112 @@
+@{ Layout = null; }
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CineStream CR - demostración académica de una plataforma de streaming." />
+  <title>CineStream CR</title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="~/css/cinestream.css" asp-append-version="true" />
+</head>
+<body>
+  <div class="antiforgery-token">@Html.AntiForgeryToken()</div>
+  <section id="login-view" class="login-view">
+    <div class="login-backdrop"></div>
+    <div class="login-card glass">
+      <div class="brand brand-large"><span>CINE</span><strong>STREAM</strong><small>CR</small></div>
+      <h1>Todo el cine, en un solo lugar</h1>
+      <p>Proyecto académico inspirado en las principales plataformas de streaming.</p>
+      <form id="login-form" novalidate>
+        <label for="login-identifier">Correo o usuario</label>
+        <input id="login-identifier" name="identifier" autocomplete="username" value="demo" required />
+        <label for="login-password">Contraseña</label>
+        <input id="login-password" name="password" type="password" autocomplete="current-password" value="Demo123*" required />
+        <p id="login-error" class="form-error" role="alert"></p>
+        <button class="btn btn-primary btn-block" type="submit">Ingresar</button>
+      </form>
+      <div class="demo-credentials">
+        <strong>Acceso de demostración</strong>
+        <span>Usuario: demo</span>
+        <span>Contraseña: Demo123*</span>
+      </div>
+    </div>
+  </section>
+
+  <div id="app-shell" class="app-shell hidden">
+    <header class="topbar">
+      <button class="brand brand-button" data-nav="home" aria-label="Ir al inicio"><span>CINE</span><strong>STREAM</strong><small>CR</small></button>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <button class="nav-link active" data-nav="home">Inicio</button>
+        <button class="nav-link" data-nav="watchlists">Mis listas</button>
+      </nav>
+      <div class="header-actions">
+        <div class="header-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="header-search" type="search" placeholder="Buscar películas..." autocomplete="off" />
+        </div>
+        <div class="user-menu">
+          <button id="user-menu-button" class="avatar-button" aria-expanded="false"><span id="user-initial">U</span></button>
+          <div id="user-dropdown" class="dropdown hidden">
+            <strong id="user-name">Usuario</strong>
+            <span id="user-email"></span>
+            <hr />
+            <button id="logout-button">Cerrar sesión</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="app-main" tabindex="-1"></main>
+
+    <footer class="site-footer">
+      <p>CineStream CR · Proyecto académico SC-701</p>
+      <p>El catálogo utiliza películas, directores y actores reales. Cuando hay conexión se muestran miniaturas de Wikipedia/Wikimedia; sin conexión se usan portadas locales originales. Los videos se agregan localmente para la demostración académica.</p>
+    </footer>
+  </div>
+
+  <section id="player-dock" class="player-dock hidden" aria-label="Mini reproductor">
+    <img id="dock-poster" alt="" />
+    <div class="dock-info">
+      <strong id="dock-title">Sin reproducción</strong>
+      <span id="dock-time">00:00 / 00:00</span>
+      <div class="dock-progress"><div id="dock-progress-fill"></div></div>
+    </div>
+    <div class="dock-controls">
+      <button id="dock-prev" title="Película anterior">⏮</button>
+      <button id="dock-play" title="Reproducir o pausar">▶</button>
+      <button id="dock-next" title="Película siguiente">⏭</button>
+      <button id="dock-expand" title="Abrir reproductor">⛶</button>
+      <button id="dock-close" title="Cerrar reproductor">✕</button>
+    </div>
+  </section>
+
+  <section id="player-overlay" class="player-overlay hidden" aria-label="Reproductor de película">
+    <div class="player-stage">
+      <div class="player-top">
+        <button id="player-collapse" class="icon-button" aria-label="Minimizar reproductor">⌄</button>
+        <div><strong id="player-title"></strong><span id="player-subtitle"></span></div>
+      </div>
+      <video id="video-player" preload="metadata" playsinline></video>
+      <div class="player-controls">
+        <button id="player-prev" title="Película anterior">⏮</button>
+        <button id="player-back" title="Retroceder 10 segundos">↶ 10</button>
+        <button id="player-play" class="play-main" title="Reproducir o pausar">▶</button>
+        <button id="player-forward" title="Avanzar 10 segundos">10 ↷</button>
+        <button id="player-next" title="Película siguiente">⏭</button>
+        <span id="player-current-time">00:00</span>
+        <input id="player-progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progreso de reproducción" />
+        <span id="player-duration">00:00</span>
+        <label class="volume-control" title="Volumen">🔊 <input id="player-volume" type="range" min="0" max="1" value="0.8" step="0.05" /></label>
+        <button id="player-fullscreen" title="Pantalla completa">⛶</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="modal-root"></div>
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  <div id="spinner" class="spinner-overlay hidden" aria-label="Cargando"><div class="spinner"></div></div>
+
+  <script src="~/js/cinestream.js" asp-append-version="true" defer></script>
+</body>
+</html>

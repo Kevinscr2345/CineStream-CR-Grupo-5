@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CineStreamCR/CineStreamCR.csproj" />
+  <Project Path="CineStreamCR.BLL/CineStreamCR.BLL.csproj" />
+  <Project Path="CineStreamCR.DAL/CineStreamCR.DAL.csproj" />
+</Solution>

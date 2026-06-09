@@ -1,0 +1,805 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "year": 2001,
+      "duration": 178,
+      "featured": true,
+      "synopsis": "En la Tierra Media, el joven hobbit Frodo Bolsón hereda un anillo de poder que debe ser destruido antes de que el señor oscuro Sauron lo recupere. Acompañado por una comunidad de héroes, inicia un viaje peligroso hacia Mordor.",
+      "source": "https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring",
+      "genres": [
+        "Aventura",
+        "Fantasía",
+        "Drama"
+      ],
+      "directors": [
+        "Peter Jackson"
+      ],
+      "cast": [
+        [
+          "Elijah Wood",
+          "Frodo Baggins"
+        ],
+        [
+          "Ian McKellen",
+          "Gandalf"
+        ],
+        [
+          "Viggo Mortensen",
+          "Aragorn"
+        ]
+      ],
+      "tagline": "Una comunidad. Un anillo. Un destino.",
+      "theme": "ring"
+    },
+    {
+      "id": 2,
+      "title": "Star Wars: Episode IV – A New Hope",
+      "year": 1977,
+      "duration": 121,
+      "featured": false,
+      "synopsis": "Luke Skywalker abandona su vida en Tatooine para unirse a la Alianza Rebelde. Junto a Han Solo y la princesa Leia, intenta destruir la Estrella de la Muerte y enfrentarse al Imperio Galáctico.",
+      "source": "https://en.wikipedia.org/wiki/Star_Wars_(film)",
+      "genres": [
+        "Ciencia ficción",
+        "Aventura",
+        "Acción"
+      ],
+      "directors": [
+        "George Lucas"
+      ],
+      "cast": [
+        [
+          "Mark Hamill",
+          "Luke Skywalker"
+        ],
+        [
+          "Harrison Ford",
+          "Han Solo"
+        ],
+        [
+          "Carrie Fisher",
+          "Princess Leia Organa"
+        ]
+      ],
+      "tagline": "Una galaxia muy, muy lejana.",
+      "theme": "space"
+    },
+    {
+      "id": 3,
+      "title": "Harry Potter and the Philosopher's Stone",
+      "year": 2001,
+      "duration": 152,
+      "featured": false,
+      "synopsis": "Harry Potter descubre que es un mago y comienza sus estudios en Hogwarts. Allí forma amistad con Ron y Hermione, conoce el mundo mágico y se enfrenta a un misterio relacionado con la Piedra Filosofal.",
+      "source": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)",
+      "genres": [
+        "Fantasía",
+        "Aventura"
+      ],
+      "directors": [
+        "Chris Columbus"
+      ],
+      "cast": [
+        [
+          "Daniel Radcliffe",
+          "Harry Potter"
+        ],
+        [
+          "Rupert Grint",
+          "Ron Weasley"
+        ],
+        [
+          "Emma Watson",
+          "Hermione Granger"
+        ]
+      ],
+      "tagline": "La magia comienza.",
+      "theme": "magic"
+    },
+    {
+      "id": 4,
+      "title": "The Dark Knight",
+      "year": 2008,
+      "duration": 152,
+      "featured": false,
+      "synopsis": "Batman, el fiscal Harvey Dent y el comisionado Gordon intentan detener al crimen organizado de Gotham. Su alianza es puesta a prueba cuando el Joker inicia una campaña de caos que obliga al héroe a enfrentar límites morales.",
+      "source": "https://en.wikipedia.org/wiki/The_Dark_Knight",
+      "genres": [
+        "Acción",
+        "Drama",
+        "Crimen",
+        "Suspenso"
+      ],
+      "directors": [
+        "Christopher Nolan"
+      ],
+      "cast": [
+        [
+          "Christian Bale",
+          "Bruce Wayne / Batman"
+        ],
+        [
+          "Heath Ledger",
+          "The Joker"
+        ],
+        [
+          "Aaron Eckhart",
+          "Harvey Dent / Two-Face"
+        ]
+      ],
+      "tagline": "El caos llega a Gotham.",
+      "theme": "gotham"
+    },
+    {
+      "id": 5,
+      "title": "Avengers: Endgame",
+      "year": 2019,
+      "duration": 181,
+      "featured": false,
+      "synopsis": "Después de la devastación causada por Thanos, los Vengadores supervivientes buscan una última oportunidad para revertir la pérdida y restaurar el universo, aunque la misión exige sacrificios decisivos.",
+      "source": "https://en.wikipedia.org/wiki/Avengers:_Endgame",
+      "genres": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción",
+        "Superhéroes"
+      ],
+      "directors": [
+        "Anthony Russo",
+        "Joe Russo"
+      ],
+      "cast": [
+        [
+          "Robert Downey Jr.",
+          "Tony Stark / Iron Man"
+        ],
+        [
+          "Chris Evans",
+          "Steve Rogers / Captain America"
+        ],
+        [
+          "Scarlett Johansson",
+          "Natasha Romanoff / Black Widow"
+        ]
+      ],
+      "tagline": "Lo que sea necesario.",
+      "theme": "cosmic"
+    },
+    {
+      "id": 6,
+      "title": "Jurassic Park",
+      "year": 1993,
+      "duration": 127,
+      "featured": false,
+      "synopsis": "Un grupo de especialistas visita un parque temático en Isla Nublar, cerca de Costa Rica, donde dinosaurios clonados han vuelto a la vida. Una falla de seguridad convierte la visita en una lucha por sobrevivir.",
+      "source": "https://en.wikipedia.org/wiki/Jurassic_Park_(film)",
+      "genres": [
+        "Aventura",
+        "Ciencia ficción",
+        "Suspenso"
+      ],
+      "directors": [
+        "Steven Spielberg"
+      ],
+      "cast": [
+        [
+          "Sam Neill",
+          "Dr. Alan Grant"
+        ],
+        [
+          "Laura Dern",
+          "Dr. Ellie Sattler"
+        ],
+        [
+          "Jeff Goldblum",
+          "Dr. Ian Malcolm"
+        ]
+      ],
+      "tagline": "Una aventura de 65 millones de años.",
+      "theme": "jungle"
+    },
+    {
+      "id": 7,
+      "title": "Titanic",
+      "year": 1997,
+      "duration": 195,
+      "featured": false,
+      "synopsis": "A bordo del RMS Titanic, Jack Dawson y Rose DeWitt Bukater, jóvenes de clases sociales distintas, se enamoran durante el viaje inaugural del barco, cuya colisión con un iceberg cambia sus vidas para siempre.",
+      "source": "https://en.wikipedia.org/wiki/Titanic_(1997_film)",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "directors": [
+        "James Cameron"
+      ],
+      "cast": [
+        [
+          "Leonardo DiCaprio",
+          "Jack Dawson"
+        ],
+        [
+          "Kate Winslet",
+          "Rose DeWitt Bukater"
+        ],
+        [
+          "Billy Zane",
+          "Caledon Hockley"
+        ]
+      ],
+      "tagline": "Nada en la Tierra podía separarlos.",
+      "theme": "ocean"
+    },
+    {
+      "id": 8,
+      "title": "The Matrix",
+      "year": 1999,
+      "duration": 136,
+      "featured": false,
+      "synopsis": "El programador Thomas Anderson, conocido como Neo, descubre que la realidad que conoce es una simulación creada por máquinas. Morfeo y Trinity lo introducen en una rebelión que cuestiona la libertad y la identidad.",
+      "source": "https://en.wikipedia.org/wiki/The_Matrix",
+      "genres": [
+        "Acción",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Lana Wachowski",
+        "Lilly Wachowski"
+      ],
+      "cast": [
+        [
+          "Keanu Reeves",
+          "Neo"
+        ],
+        [
+          "Laurence Fishburne",
+          "Morpheus"
+        ],
+        [
+          "Carrie-Anne Moss",
+          "Trinity"
+        ]
+      ],
+      "tagline": "Despierta de la simulación.",
+      "theme": "matrix"
+    },
+    {
+      "id": 9,
+      "title": "Gladiator",
+      "year": 2000,
+      "duration": 155,
+      "featured": false,
+      "synopsis": "El general romano Máximo es traicionado por Cómodo y reducido a la esclavitud. Convertido en gladiador, busca justicia mientras asciende en la arena y desafía al nuevo emperador de Roma.",
+      "source": "https://en.wikipedia.org/wiki/Gladiator_(2000_film)",
+      "genres": [
+        "Acción",
+        "Aventura",
+        "Drama"
+      ],
+      "directors": [
+        "Ridley Scott"
+      ],
+      "cast": [
+        [
+          "Russell Crowe",
+          "Maximus Decimus Meridius"
+        ],
+        [
+          "Joaquin Phoenix",
+          "Commodus"
+        ],
+        [
+          "Connie Nielsen",
+          "Lucilla"
+        ]
+      ],
+      "tagline": "Lo que hacemos en vida resuena en la eternidad.",
+      "theme": "rome"
+    },
+    {
+      "id": 10,
+      "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "year": 2003,
+      "duration": 143,
+      "featured": false,
+      "synopsis": "El herrero Will Turner se une al impredecible capitán Jack Sparrow para rescatar a Elizabeth Swann de una tripulación pirata condenada por una antigua maldición azteca.",
+      "source": "https://en.wikipedia.org/wiki/Pirates_of_the_Caribbean:_The_Curse_of_the_Black_Pearl",
+      "genres": [
+        "Aventura",
+        "Fantasía",
+        "Acción"
+      ],
+      "directors": [
+        "Gore Verbinski"
+      ],
+      "cast": [
+        [
+          "Johnny Depp",
+          "Captain Jack Sparrow"
+        ],
+        [
+          "Geoffrey Rush",
+          "Captain Hector Barbossa"
+        ],
+        [
+          "Orlando Bloom",
+          "Will Turner"
+        ],
+        [
+          "Keira Knightley",
+          "Elizabeth Swann"
+        ]
+      ],
+      "tagline": "La aventura zarpa esta noche.",
+      "theme": "pirates"
+    },
+    {
+      "id": 11,
+      "title": "Interstellar",
+      "year": 2014,
+      "duration": 169,
+      "featured": false,
+      "synopsis": "Con la Tierra al borde del colapso, el expiloto Cooper se une a una misión espacial que atraviesa un agujero de gusano en busca de un nuevo hogar para la humanidad, mientras lucha contra el tiempo y la distancia.",
+      "source": "https://en.wikipedia.org/wiki/Interstellar_(film)",
+      "genres": [
+        "Ciencia ficción",
+        "Drama",
+        "Aventura"
+      ],
+      "directors": [
+        "Christopher Nolan"
+      ],
+      "cast": [
+        [
+          "Matthew McConaughey",
+          "Joseph Cooper"
+        ],
+        [
+          "Anne Hathaway",
+          "Dr. Amelia Brand"
+        ],
+        [
+          "Jessica Chastain",
+          "Murphy Cooper"
+        ]
+      ],
+      "tagline": "El futuro está más allá de las estrellas.",
+      "theme": "blackhole"
+    },
+    {
+      "id": 12,
+      "title": "Inception",
+      "year": 2010,
+      "duration": 148,
+      "featured": false,
+      "synopsis": "Dom Cobb dirige un equipo capaz de entrar en los sueños para robar secretos. Para recuperar su vida, acepta la misión inversa: implantar una idea en la mente de un heredero empresarial.",
+      "source": "https://en.wikipedia.org/wiki/Inception",
+      "genres": [
+        "Ciencia ficción",
+        "Acción",
+        "Suspenso",
+        "Misterio"
+      ],
+      "directors": [
+        "Christopher Nolan"
+      ],
+      "cast": [
+        [
+          "Leonardo DiCaprio",
+          "Dom Cobb"
+        ],
+        [
+          "Joseph Gordon-Levitt",
+          "Arthur"
+        ],
+        [
+          "Elliot Page",
+          "Ariadne"
+        ]
+      ],
+      "tagline": "Tu mente es la escena del crimen.",
+      "theme": "dream"
+    }
+  ],
+  "people": [
+    {
+      "id": 1,
+      "name": "Peter Jackson",
+      "nationality": "Neozelandés",
+      "birth": "1961-10-31",
+      "biography": "Cineasta neozelandés conocido por dirigir, escribir y producir las trilogías cinematográficas de The Lord of the Rings y The Hobbit.",
+      "source": "https://en.wikipedia.org/wiki/Peter_Jackson"
+    },
+    {
+      "id": 2,
+      "name": "Elijah Wood",
+      "nationality": "Estadounidense",
+      "birth": "1981-01-28",
+      "biography": "Actor estadounidense reconocido internacionalmente por interpretar a Frodo Baggins en la trilogía cinematográfica de The Lord of the Rings.",
+      "source": "https://en.wikipedia.org/wiki/Elijah_Wood"
+    },
+    {
+      "id": 3,
+      "name": "Ian McKellen",
+      "nationality": "Británico",
+      "birth": "1939-05-25",
+      "biography": "Actor británico de teatro y cine, ampliamente reconocido por sus interpretaciones de Gandalf y Magneto y por una extensa carrera shakespeariana.",
+      "source": "https://en.wikipedia.org/wiki/Ian_McKellen"
+    },
+    {
+      "id": 4,
+      "name": "Viggo Mortensen",
+      "nationality": "Estadounidense-danés",
+      "birth": "1958-10-20",
+      "biography": "Actor, escritor y artista estadounidense-danés conocido por interpretar a Aragorn y por su trabajo en cine independiente y dramático.",
+      "source": "https://en.wikipedia.org/wiki/Viggo_Mortensen"
+    },
+    {
+      "id": 5,
+      "name": "George Lucas",
+      "nationality": "Estadounidense",
+      "birth": "1944-05-14",
+      "biography": "Cineasta estadounidense creador de Star Wars e Indiana Jones y fundador de Lucasfilm e Industrial Light & Magic.",
+      "source": "https://en.wikipedia.org/wiki/George_Lucas"
+    },
+    {
+      "id": 6,
+      "name": "Mark Hamill",
+      "nationality": "Estadounidense",
+      "birth": "1951-09-25",
+      "biography": "Actor estadounidense conocido por interpretar a Luke Skywalker y por una destacada carrera como actor de voz.",
+      "source": "https://en.wikipedia.org/wiki/Mark_Hamill"
+    },
+    {
+      "id": 7,
+      "name": "Harrison Ford",
+      "nationality": "Estadounidense",
+      "birth": "1942-07-13",
+      "biography": "Actor estadounidense célebre por sus papeles como Han Solo, Indiana Jones y Rick Deckard.",
+      "source": "https://en.wikipedia.org/wiki/Harrison_Ford"
+    },
+    {
+      "id": 8,
+      "name": "Carrie Fisher",
+      "nationality": "Estadounidense",
+      "birth": "1956-10-21",
+      "biography": "Actriz y escritora estadounidense recordada por interpretar a la princesa Leia en Star Wars.",
+      "source": "https://en.wikipedia.org/wiki/Carrie_Fisher"
+    },
+    {
+      "id": 9,
+      "name": "Chris Columbus",
+      "nationality": "Estadounidense",
+      "birth": "1958-09-10",
+      "biography": "Director, productor y guionista estadounidense que dirigió las dos primeras películas de Harry Potter y varias comedias familiares.",
+      "source": "https://en.wikipedia.org/wiki/Chris_Columbus_(filmmaker)"
+    },
+    {
+      "id": 10,
+      "name": "Daniel Radcliffe",
+      "nationality": "Británico",
+      "birth": "1989-07-23",
+      "biography": "Actor británico conocido por interpretar a Harry Potter en la serie cinematográfica basada en las novelas de J. K. Rowling.",
+      "source": "https://en.wikipedia.org/wiki/Daniel_Radcliffe"
+    },
+    {
+      "id": 11,
+      "name": "Rupert Grint",
+      "nationality": "Británico",
+      "birth": "1988-08-24",
+      "biography": "Actor británico reconocido por su papel de Ron Weasley en las películas de Harry Potter.",
+      "source": "https://en.wikipedia.org/wiki/Rupert_Grint"
+    },
+    {
+      "id": 12,
+      "name": "Emma Watson",
+      "nationality": "Británica",
+      "birth": "1990-04-15",
+      "biography": "Actriz británica conocida por interpretar a Hermione Granger y por su trabajo posterior en cine y causas educativas.",
+      "source": "https://en.wikipedia.org/wiki/Emma_Watson"
+    },
+    {
+      "id": 13,
+      "name": "Christopher Nolan",
+      "nationality": "Británico-estadounidense",
+      "birth": "1970-07-30",
+      "biography": "Cineasta británico-estadounidense conocido por películas de gran escala con estructuras narrativas complejas, entre ellas The Dark Knight, Inception e Interstellar.",
+      "source": "https://en.wikipedia.org/wiki/Christopher_Nolan"
+    },
+    {
+      "id": 14,
+      "name": "Christian Bale",
+      "nationality": "Británico",
+      "birth": "1974-01-30",
+      "biography": "Actor británico ganador del Óscar, reconocido por sus transformaciones físicas y por interpretar a Bruce Wayne en la trilogía The Dark Knight.",
+      "source": "https://en.wikipedia.org/wiki/Christian_Bale"
+    },
+    {
+      "id": 15,
+      "name": "Heath Ledger",
+      "nationality": "Australiano",
+      "birth": "1979-04-04",
+      "biography": "Actor australiano ganador póstumo del Óscar por su interpretación del Joker en The Dark Knight.",
+      "source": "https://en.wikipedia.org/wiki/Heath_Ledger"
+    },
+    {
+      "id": 16,
+      "name": "Aaron Eckhart",
+      "nationality": "Estadounidense",
+      "birth": "1968-03-12",
+      "biography": "Actor estadounidense conocido por sus papeles en Thank You for Smoking y como Harvey Dent en The Dark Knight.",
+      "source": "https://en.wikipedia.org/wiki/Aaron_Eckhart"
+    },
+    {
+      "id": 17,
+      "name": "Anthony Russo",
+      "nationality": "Estadounidense",
+      "birth": "1970-02-03",
+      "biography": "Director y productor estadounidense que, junto con su hermano Joe Russo, dirigió varias películas del Universo Cinematográfico de Marvel.",
+      "source": "https://en.wikipedia.org/wiki/Russo_brothers"
+    },
+    {
+      "id": 18,
+      "name": "Joe Russo",
+      "nationality": "Estadounidense",
+      "birth": "1971-07-18",
+      "biography": "Director y productor estadounidense que forma con Anthony Russo el dúo responsable de Avengers: Infinity War y Avengers: Endgame.",
+      "source": "https://en.wikipedia.org/wiki/Russo_brothers"
+    },
+    {
+      "id": 19,
+      "name": "Robert Downey Jr.",
+      "nationality": "Estadounidense",
+      "birth": "1965-04-04",
+      "biography": "Actor estadounidense ganador del Óscar, conocido por interpretar a Tony Stark en el Universo Cinematográfico de Marvel.",
+      "source": "https://en.wikipedia.org/wiki/Robert_Downey_Jr."
+    },
+    {
+      "id": 20,
+      "name": "Chris Evans",
+      "nationality": "Estadounidense",
+      "birth": "1981-06-13",
+      "biography": "Actor estadounidense conocido por interpretar a Steve Rogers, Captain America, en el Universo Cinematográfico de Marvel.",
+      "source": "https://en.wikipedia.org/wiki/Chris_Evans_(actor)"
+    },
+    {
+      "id": 21,
+      "name": "Scarlett Johansson",
+      "nationality": "Estadounidense",
+      "birth": "1984-11-22",
+      "biography": "Actriz estadounidense reconocida por una amplia carrera dramática y por interpretar a Natasha Romanoff en Marvel.",
+      "source": "https://en.wikipedia.org/wiki/Scarlett_Johansson"
+    },
+    {
+      "id": 22,
+      "name": "Steven Spielberg",
+      "nationality": "Estadounidense",
+      "birth": "1946-12-18",
+      "biography": "Director y productor estadounidense, figura central del cine moderno y responsable de títulos como Jaws, E.T., Jurassic Park y Schindler’s List.",
+      "source": "https://en.wikipedia.org/wiki/Steven_Spielberg"
+    },
+    {
+      "id": 23,
+      "name": "Sam Neill",
+      "nationality": "Neozelandés",
+      "birth": "1947-09-14",
+      "biography": "Actor neozelandés conocido por interpretar al paleontólogo Alan Grant en la franquicia Jurassic Park.",
+      "source": "https://en.wikipedia.org/wiki/Sam_Neill"
+    },
+    {
+      "id": 24,
+      "name": "Laura Dern",
+      "nationality": "Estadounidense",
+      "birth": "1967-02-10",
+      "biography": "Actriz estadounidense ganadora del Óscar, conocida por Jurassic Park, Marriage Story y numerosas producciones de cine y televisión.",
+      "source": "https://en.wikipedia.org/wiki/Laura_Dern"
+    },
+    {
+      "id": 25,
+      "name": "Jeff Goldblum",
+      "nationality": "Estadounidense",
+      "birth": "1952-10-22",
+      "biography": "Actor estadounidense conocido por The Fly, Jurassic Park, Independence Day y su estilo interpretativo distintivo.",
+      "source": "https://en.wikipedia.org/wiki/Jeff_Goldblum"
+    },
+    {
+      "id": 26,
+      "name": "James Cameron",
+      "nationality": "Canadiense",
+      "birth": "1954-08-16",
+      "biography": "Director, guionista y productor canadiense conocido por Titanic, Avatar, Aliens y Terminator 2.",
+      "source": "https://en.wikipedia.org/wiki/James_Cameron"
+    },
+    {
+      "id": 27,
+      "name": "Leonardo DiCaprio",
+      "nationality": "Estadounidense",
+      "birth": "1974-11-11",
+      "biography": "Actor y productor estadounidense ganador del Óscar, protagonista de Titanic, Inception y The Revenant.",
+      "source": "https://en.wikipedia.org/wiki/Leonardo_DiCaprio"
+    },
+    {
+      "id": 28,
+      "name": "Kate Winslet",
+      "nationality": "Británica",
+      "birth": "1975-10-05",
+      "biography": "Actriz británica ganadora del Óscar, reconocida por Titanic, The Reader y una extensa carrera en drama.",
+      "source": "https://en.wikipedia.org/wiki/Kate_Winslet"
+    },
+    {
+      "id": 29,
+      "name": "Billy Zane",
+      "nationality": "Estadounidense",
+      "birth": "1966-02-24",
+      "biography": "Actor estadounidense conocido por interpretar a Caledon Hockley en Titanic y por papeles en cine y televisión.",
+      "source": "https://en.wikipedia.org/wiki/Billy_Zane"
+    },
+    {
+      "id": 30,
+      "name": "Lana Wachowski",
+      "nationality": "Estadounidense",
+      "birth": "1965-06-21",
+      "biography": "Cineasta estadounidense que, junto con Lilly Wachowski, creó y dirigió The Matrix y otras obras de ciencia ficción.",
+      "source": "https://en.wikipedia.org/wiki/The_Wachowskis"
+    },
+    {
+      "id": 31,
+      "name": "Lilly Wachowski",
+      "nationality": "Estadounidense",
+      "birth": "1967-12-29",
+      "biography": "Cineasta estadounidense conocida por su colaboración con Lana Wachowski en The Matrix, Cloud Atlas y Sense8.",
+      "source": "https://en.wikipedia.org/wiki/The_Wachowskis"
+    },
+    {
+      "id": 32,
+      "name": "Keanu Reeves",
+      "nationality": "Canadiense",
+      "birth": "1964-09-02",
+      "biography": "Actor canadiense conocido por The Matrix, John Wick, Speed y una amplia carrera en cine de acción y ciencia ficción.",
+      "source": "https://en.wikipedia.org/wiki/Keanu_Reeves"
+    },
+    {
+      "id": 33,
+      "name": "Laurence Fishburne",
+      "nationality": "Estadounidense",
+      "birth": "1961-07-30",
+      "biography": "Actor estadounidense reconocido por interpretar a Morpheus en The Matrix y por una extensa trayectoria en teatro, cine y televisión.",
+      "source": "https://en.wikipedia.org/wiki/Laurence_Fishburne"
+    },
+    {
+      "id": 34,
+      "name": "Carrie-Anne Moss",
+      "nationality": "Canadiense",
+      "birth": "1967-08-21",
+      "biography": "Actriz canadiense conocida principalmente por interpretar a Trinity en la franquicia The Matrix.",
+      "source": "https://en.wikipedia.org/wiki/Carrie-Anne_Moss"
+    },
+    {
+      "id": 35,
+      "name": "Ridley Scott",
+      "nationality": "Británico",
+      "birth": "1937-11-30",
+      "biography": "Director y productor británico conocido por Alien, Blade Runner, Gladiator y The Martian.",
+      "source": "https://en.wikipedia.org/wiki/Ridley_Scott"
+    },
+    {
+      "id": 36,
+      "name": "Russell Crowe",
+      "nationality": "Neozelandés-australiano",
+      "birth": "1964-04-07",
+      "biography": "Actor neozelandés-australiano ganador del Óscar por su interpretación de Máximo en Gladiator.",
+      "source": "https://en.wikipedia.org/wiki/Russell_Crowe"
+    },
+    {
+      "id": 37,
+      "name": "Joaquin Phoenix",
+      "nationality": "Estadounidense",
+      "birth": "1974-10-28",
+      "biography": "Actor estadounidense ganador del Óscar, reconocido por Joker, Gladiator, Walk the Line y The Master.",
+      "source": "https://en.wikipedia.org/wiki/Joaquin_Phoenix"
+    },
+    {
+      "id": 38,
+      "name": "Connie Nielsen",
+      "nationality": "Danesa",
+      "birth": "1965-07-03",
+      "biography": "Actriz danesa conocida por interpretar a Lucilla en Gladiator y por sus trabajos en cine europeo y estadounidense.",
+      "source": "https://en.wikipedia.org/wiki/Connie_Nielsen"
+    },
+    {
+      "id": 39,
+      "name": "Gore Verbinski",
+      "nationality": "Estadounidense",
+      "birth": "1964-03-16",
+      "biography": "Director estadounidense conocido por The Ring, Rango y las primeras películas de Pirates of the Caribbean.",
+      "source": "https://en.wikipedia.org/wiki/Gore_Verbinski"
+    },
+    {
+      "id": 40,
+      "name": "Johnny Depp",
+      "nationality": "Estadounidense",
+      "birth": "1963-06-09",
+      "biography": "Actor estadounidense conocido por interpretar al capitán Jack Sparrow y por sus colaboraciones con diversos directores.",
+      "source": "https://en.wikipedia.org/wiki/Johnny_Depp"
+    },
+    {
+      "id": 41,
+      "name": "Geoffrey Rush",
+      "nationality": "Australiano",
+      "birth": "1951-07-06",
+      "biography": "Actor australiano ganador del Óscar, conocido por Shine, The King’s Speech y su papel de Barbossa.",
+      "source": "https://en.wikipedia.org/wiki/Geoffrey_Rush"
+    },
+    {
+      "id": 42,
+      "name": "Orlando Bloom",
+      "nationality": "Británico",
+      "birth": "1977-01-13",
+      "biography": "Actor británico conocido por interpretar a Legolas en The Lord of the Rings y a Will Turner en Pirates of the Caribbean.",
+      "source": "https://en.wikipedia.org/wiki/Orlando_Bloom"
+    },
+    {
+      "id": 43,
+      "name": "Keira Knightley",
+      "nationality": "Británica",
+      "birth": "1985-03-26",
+      "biography": "Actriz británica conocida por Pride & Prejudice, Atonement y su papel de Elizabeth Swann.",
+      "source": "https://en.wikipedia.org/wiki/Keira_Knightley"
+    },
+    {
+      "id": 44,
+      "name": "Matthew McConaughey",
+      "nationality": "Estadounidense",
+      "birth": "1969-11-04",
+      "biography": "Actor estadounidense ganador del Óscar por Dallas Buyers Club y protagonista de Interstellar y True Detective.",
+      "source": "https://en.wikipedia.org/wiki/Matthew_McConaughey"
+    },
+    {
+      "id": 45,
+      "name": "Anne Hathaway",
+      "nationality": "Estadounidense",
+      "birth": "1982-11-12",
+      "biography": "Actriz estadounidense ganadora del Óscar, conocida por Les Misérables, The Devil Wears Prada e Interstellar.",
+      "source": "https://en.wikipedia.org/wiki/Anne_Hathaway"
+    },
+    {
+      "id": 46,
+      "name": "Jessica Chastain",
+      "nationality": "Estadounidense",
+      "birth": "1977-03-24",
+      "biography": "Actriz y productora estadounidense ganadora del Óscar, conocida por Zero Dark Thirty, Interstellar y The Eyes of Tammy Faye.",
+      "source": "https://en.wikipedia.org/wiki/Jessica_Chastain"
+    },
+    {
+      "id": 47,
+      "name": "Joseph Gordon-Levitt",
+      "nationality": "Estadounidense",
+      "birth": "1981-02-17",
+      "biography": "Actor y cineasta estadounidense conocido por Inception, 500 Days of Summer y Looper.",
+      "source": "https://en.wikipedia.org/wiki/Joseph_Gordon-Levitt"
+    },
+    {
+      "id": 48,
+      "name": "Elliot Page",
+      "nationality": "Canadiense",
+      "birth": "1987-02-21",
+      "biography": "Actor canadiense conocido por Juno, Inception, Hard Candy y la serie The Umbrella Academy.",
+      "source": "https://en.wikipedia.org/wiki/Elliot_Page"
+    }
+  ],
+  "genres": [
+    "Acción",
+    "Aventura",
+    "Ciencia ficción",
+    "Crimen",
+    "Drama",
+    "Fantasía",
+    "Misterio",
+    "Romance",
+    "Superhéroes",
+    "Suspenso"
+  ],
+  "creditCount": 51
+}

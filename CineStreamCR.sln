@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineStreamCR", "CineStreamCR\CineStreamCR.csproj", "{18CDAEBC-A65F-43E8-B317-0D77A730D001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineStreamCR.BLL", "CineStreamCR.BLL\CineStreamCR.BLL.csproj", "{18CDAEBC-A65F-43E8-B317-0D77A730D002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineStreamCR.DAL", "CineStreamCR.DAL\CineStreamCR.DAL.csproj", "{18CDAEBC-A65F-43E8-B317-0D77A730D003}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18CDAEBC-A65F-43E8-B317-0D77A730D001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CDAEBC-A65F-43E8-B317-0D77A730D003}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

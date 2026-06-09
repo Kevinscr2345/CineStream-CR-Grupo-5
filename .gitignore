@@ -1,0 +1,7 @@
+.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+CineStreamCR/appsettings.Local.json
+CineStreamCR/wwwroot/videos/*.mp4
