@@ -209,3 +209,4 @@ public sealed class PlaybackService(ICineRepositorio repository) : IPlaybackServ
         return Respuesta<PlaybackDto>.Correcta(new PlaybackDto(progress.MovieId, progress.CurrentSecond, progress.TotalSeconds, progress.IsCompleted, progress.LastPlayedAt));
     }
 }
+
