@@ -391,3 +391,4 @@ public static class DbInitializer
     private static WatchListMovie WatchListMovie(WatchList list, Movie movie) => new()
     { WatchListId = list.Id, MovieId = movie.Id };
 }
+
