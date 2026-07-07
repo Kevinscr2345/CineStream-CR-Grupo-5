@@ -1,7 +1,5 @@
 using CineStreamCR.BLL.Dtos;
-using CineStreamCR.BLL.Dtos.Review;
 using CineStreamCR.BLL.Services;
-using CineStreamCR.BLL.Services.Review;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
