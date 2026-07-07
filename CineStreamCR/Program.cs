@@ -77,8 +77,12 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Base de datos con doble opción:
+// 1) Automática: EF Core crea la base si no existe y DbInitializer inserta datos iniciales.
+// 2) Manual: se ejecuta el script SQL en SSMS y la app solo se conecta a la base existente.
+var autoCreateDatabase = !bool.TryParse(builder.Configuration["Database:AutoCreate"], out var configuredAutoCreate) || configuredAutoCreate;
 var seedData = !bool.TryParse(builder.Configuration["Database:SeedData"], out var configuredSeed) || configuredSeed;
-await DbInitializer.InitializeAsync(app.Services, seedData);
+await DbInitializer.InitializeAsync(app.Services, seedData, autoCreateDatabase);
 
 app.MapControllerRoute(
     name: "default",

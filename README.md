@@ -94,3 +94,13 @@ Cuenta secundaria:
 ## Nota de compilación
 
 La solución utiliza `.NET 10` y Entity Framework Core `10.0.8`, igual que el proyecto de referencia adjuntado.
+
+
+## Base de datos: dos formas de uso
+
+El proyecto incluye dos opciones para la base de datos:
+
+1. **Automática:** dejar `Database:AutoCreate` en `true` para que EF Core cree la base si no existe y cargue datos iniciales.
+2. **Manual:** ejecutar `database/01_OPCION_MANUAL_SSMS_CrearBaseCompleta.sql` en SSMS y luego poner `Database:AutoCreate` en `false`.
+
+Ver instrucciones completas en `docs/BASE_DE_DATOS_DOBLE_OPCION.md`.

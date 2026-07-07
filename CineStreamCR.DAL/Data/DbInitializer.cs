@@ -7,19 +7,29 @@ namespace CineStreamCR.DAL.Data;
 
 public static class DbInitializer
 {
-    public static async Task InitializeAsync(IServiceProvider services, bool seedData = true)
+    public static async Task InitializeAsync(IServiceProvider services, bool seedData = true, bool createDatabaseIfMissing = true)
     {
         await using var scope = services.CreateAsyncScope();
         var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
         try
         {
-            await db.Database.EnsureCreatedAsync();
+            if (createDatabaseIfMissing)
+            {
+                await db.Database.EnsureCreatedAsync();
+            }
+            else if (!await db.Database.CanConnectAsync())
+            {
+                throw new InvalidOperationException("No se pudo conectar con la base existente.");
+            }
         }
         catch (Exception ex)
         {
-            throw new InvalidOperationException(
-                "No fue posible conectar o crear la base CineStreamCR en SQL Server. Revise DefaultConnection y que SQL Server esté iniciado.", ex);
+            var mensaje = createDatabaseIfMissing
+                ? "No fue posible conectar o crear la base CineStreamCR en SQL Server. Revise DefaultConnection y que SQL Server esté iniciado."
+                : "No fue posible conectar con la base CineStreamCR. Si eligió modo manual, ejecute primero el script SQL en SSMS y revise DefaultConnection.";
+
+            throw new InvalidOperationException(mensaje, ex);
         }
 
         if (!seedData || await db.Movies.AnyAsync()) return;
