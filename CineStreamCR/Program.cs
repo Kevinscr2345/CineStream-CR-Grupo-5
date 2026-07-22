@@ -1,5 +1,6 @@
 using CineStreamCR.BLL;
 using CineStreamCR.BLL.Services;
+using CineStreamCR.BLL.Services.Media;
 using CineStreamCR.DAL.Data;
 using CineStreamCR.DAL.Repositorios;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -21,11 +22,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<ICineRepositorio, CineRepositorio>();
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<IMovieService, MediaService>();
 builder.Services.AddScoped<IPersonService, PersonService>();
 builder.Services.AddScoped<IWatchListService, WatchListService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IPlaybackService, PlaybackService>();
+builder.Services.AddScoped<IMediaService, WikipediaMediaService>();
 builder.Services.AddAutoMapper(cfg => { }, typeof(MapeoClases));
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

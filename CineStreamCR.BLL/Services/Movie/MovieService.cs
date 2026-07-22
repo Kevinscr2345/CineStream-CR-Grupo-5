@@ -6,7 +6,7 @@ using CineStreamCR.DAL.Seguridad;
 
 namespace CineStreamCR.BLL.Services;
 
-public sealed class MovieService(ICineRepositorio repository, IMapper mapper) : IMovieService
+public sealed class MediaService(ICineRepositorio repository, IMapper mapper) : IMovieService
 {
     public async Task<Respuesta<IReadOnlyList<GenreDto>>> GetGenresAsync(CancellationToken ct = default)
     {
