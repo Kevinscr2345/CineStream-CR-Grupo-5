@@ -76,9 +76,10 @@ input, select, textarea {
   transition: border-color .2s, box-shadow .2s, background .2s;
 }
 input:focus, select:focus, textarea:focus {
-  border-color: rgba(229,9,20,.75);
-  box-shadow: 0 0 0 4px rgba(229,9,20,.14);
+  /* Remove the red focus ring so only the accessible green focus-visible outline remains */
   background: rgba(255,255,255,.08);
+  outline: none;
+  box-shadow: none;
 }
 textarea { min-height: 110px; resize: vertical; }
 .form-error { min-height: 20px; margin: 2px 0; color: #ff8993; font-size: .9rem; }
@@ -324,12 +325,13 @@ textarea { min-height: 110px; resize: vertical; }
 .detail-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .detail-sections { display: grid; gap: 28px; padding: 26px; }
 .detail-section h3 { margin: 0 0 14px; }
-.person-row { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 8px; }
+.person-row { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 8px; align-items: flex-start; }/*Alinean con flex start para que queden de arriba a abajo y no se vean desalineados*/
 .person-card { min-width: 145px; max-width: 145px; border: 0; background: transparent; text-align: left; cursor: pointer; }
 .person-card img { width: 145px; aspect-ratio: 1; object-fit: cover; border-radius: 16px; border: 1px solid var(--border); }
 .person-card strong { display: block; margin-top: 9px; }
 .person-card span { display: block; color: var(--muted); font-size: .82rem; margin-top: 3px; }
-.review-box { display: grid; grid-template-columns: 180px 1fr; gap: 18px; }
+.review-box { display: grid; grid-template-columns: 180px 1fr; gap: 22px 34px; align-items: start; }/*Se agrega mas margen (row-gap col-gap) y se alinean start para que no esten encima uno del otro*/
+.review-box .form-grid { min-width: 0; }
 .score-picker { display: grid; gap: 8px; }
 .score-buttons { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
 .score-buttons button { border: 1px solid var(--border); border-radius: 8px; padding: 8px 0; background: rgba(255,255,255,.05); cursor: pointer; }
@@ -713,7 +715,7 @@ select optgroup {
 
 /* Token antifalsificación generado por Razor; no se muestra en pantalla. */
 .antiforgery-token { display: none !important; }
-.source-links { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1rem; }
+.source-links { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1rem; margin-bottom:1rem; }/*Se agrega margin button para generar el margen que faltaba y hacia el overlap*/
 .source-links a { color:#c7d2fe; text-decoration:none; border:1px solid rgba(255,255,255,.2); border-radius:999px; padding:.45rem .8rem; font-size:.85rem; }
 .source-links a:hover { background:rgba(255,255,255,.08); color:white; }
 .person-card img, .person-profile > img { object-fit:cover; background:#1a1a22; }

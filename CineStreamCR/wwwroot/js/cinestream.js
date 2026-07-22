@@ -258,9 +258,6 @@
           <div><h2>Catálogo de películas</h2><span id="catalog-count">Explora el catálogo completo</span></div>
         </div>
         <div class="filters">
-          <label>Buscar por título
-            <input id="catalog-search" type="search" value="${escapeAttr(state.filters.search)}" placeholder="Ejemplo: Chaplin" />
-          </label>
           <label>Género
             <select id="genre-filter"><option value="">Todos</option>${state.genres.map(g => `<option value="${g.id}" ${String(g.id) === String(state.filters.genreId) ? 'selected' : ''}>${escapeHtml(g.name)}</option>`).join('')}</select>
           </label>
@@ -289,16 +286,6 @@
     document.querySelector('#hero-details').addEventListener('click', () => runUiAction(() => openMovieDetail(movie.id)));
     document.querySelector('#hero-list').addEventListener('click', () => runUiAction(() => openWatchListPicker(movie.id)));
 
-    const catalogSearch = document.querySelector('#catalog-search');
-    catalogSearch.addEventListener('input', () => {
-      clearTimeout(state.searchTimer);
-      state.searchTimer = setTimeout(() => runUiAction(async () => {
-        state.filters.search = catalogSearch.value.trim();
-        dom.headerSearch.value = state.filters.search;
-        state.filters.page = 1;
-        await refreshCatalog();
-      }), 350);
-    });
     ['genre-filter', 'year-filter', 'sort-filter', 'direction-filter'].forEach(id => {
       document.querySelector(`#${id}`).addEventListener('change', event => runUiAction(async () => {
         const key = id.replace('-filter', '').replace('genre', 'genreId');
