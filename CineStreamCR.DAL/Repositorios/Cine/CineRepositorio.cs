@@ -12,7 +12,7 @@ public sealed class CineRepositorio(ApplicationDbContext context) : ICineReposit
 
         return await context.Users
             .AsNoTracking()
-            .FirstOrDefaultAsync(x =>
+            .FirstOrDefaultAsync(x => 
                 x.Email.ToLower() == identifier ||
                 x.UserName.ToLower() == identifier, ct);
     }
@@ -105,7 +105,6 @@ public sealed class CineRepositorio(ApplicationDbContext context) : ICineReposit
 
         return (items, totalCount, page, pageSize, totalPages);
     }
-
     public Task<Movie?> GetMovieDetailAsync(int id, CancellationToken ct = default) =>
         context.Movies
             .AsNoTracking()
@@ -118,14 +117,14 @@ public sealed class CineRepositorio(ApplicationDbContext context) : ICineReposit
             .Include(x => x.WatchListMovies)
                 .ThenInclude(x => x.WatchList)
             .FirstOrDefaultAsync(x => x.Id == id && x.IsActive, ct);
-
+        
     public Task<Movie?> GetFeaturedMovieAsync(CancellationToken ct = default) =>
         context.Movies
             .AsNoTracking()
             .AsSplitQuery()
             .Include(x => x.Reviews)
             .Include(x => x.WatchListMovies)
-                .ThenInclude(x => x.WatchList)
+            .ThenInclude(x => x.WatchList)
             .Where(x => x.IsActive && x.IsFeatured)
             .OrderBy(x => x.Id)
             .FirstOrDefaultAsync(ct);
@@ -150,6 +149,8 @@ public sealed class CineRepositorio(ApplicationDbContext context) : ICineReposit
             .OrderByDescending(x => x.UpdatedAt)
             .ToListAsync(ct);
 
+
+    //Reduccion de includes - No leemos MovieGenres. No se utiliza al construir el detalle de la lista de seguimiento por eso la eliminamos. Se puede agregar si se requiere en el futuro.
     public Task<WatchList?> GetWatchListAsync(Guid userId, int id, CancellationToken ct = default) =>
         context.WatchLists
             .AsNoTracking()
@@ -157,10 +158,6 @@ public sealed class CineRepositorio(ApplicationDbContext context) : ICineReposit
             .Include(x => x.Movies)
                 .ThenInclude(x => x.Movie)
                     .ThenInclude(x => x.Reviews)
-            .Include(x => x.Movies)
-                .ThenInclude(x => x.Movie)
-                    .ThenInclude(x => x.MovieGenres)
-                        .ThenInclude(x => x.Genre)
             .FirstOrDefaultAsync(x => x.Id == id && x.UserId == userId, ct);
 
     public Task<bool> WatchListNameExistsAsync(Guid userId, string name, int? excludeId = null, CancellationToken ct = default) =>
