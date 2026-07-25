@@ -5,8 +5,14 @@ namespace CineStreamCR.DAL.Seguridad;
 public static class PasswordHasher
 {
     private const int Iterations = 120_000;
-    private const int SaltSize = 16;
-    private const int KeySize = 32;
+
+
+    //Mostrar tamaños en bits para mayor claridad y convertirlos a bytes para su uso en la generación de sal y hash
+    private const int SaltSizeBits = 128;
+    private const int KeySizeBits = 256;
+
+    private const int SaltSize = SaltSizeBits / 8;
+    private const int KeySize = KeySizeBits / 8;
 
     public static string Hash(string password)
     {
