@@ -32,6 +32,8 @@ public static class DbInitializer
             throw new InvalidOperationException(mensaje, ex);
         }
 
+        await EnsureYouTubeTrailersAsync(db);
+
         if (!seedData || await db.Movies.AnyAsync()) return;
 
         await using var transaction = await db.Database.BeginTransactionAsync();
@@ -376,7 +378,7 @@ public static class DbInitializer
         };
     }
 
-    private static Movie Movie(int imageIndex, string title, string synopsis, int year, int duration, bool featured, string sourceUrl)
+    private static Movie Movie(int imageIndex, string title, string synopsis, int year, int duration, bool featured, string sourceUrl, string videoUrl)
     {
         var wikiTitle = new Uri(sourceUrl).AbsolutePath.Split("/wiki/", StringSplitOptions.RemoveEmptyEntries).Last();
         var fallback = Uri.EscapeDataString($"/images/posters/movie-{imageIndex}.jpg");
@@ -389,7 +391,7 @@ public static class DbInitializer
             IsFeatured = featured,
             PosterUrl = $"/api/media/wiki-thumbnail?title={Uri.EscapeDataString(Uri.UnescapeDataString(wikiTitle))}&fallback={fallback}",
             BackdropUrl = $"/images/backdrops/movie-{imageIndex}.jpg",
-            VideoUrl = $"/videos/video{imageIndex:00}.mp4",
+            VideoUrl = videoUrl,
             InformationSourceUrl = sourceUrl,
             ImageSourceUrl = sourceUrl
         };
@@ -400,5 +402,47 @@ public static class DbInitializer
 
     private static WatchListMovie WatchListMovie(WatchList list, Movie movie) => new()
     { WatchListId = list.Id, MovieId = movie.Id };
+
+    private static async Task EnsureYouTubeTrailersAsync(ApplicationDbContext db)
+    {
+        try
+        {
+            var trailerMap = new Dictionary<int, string>
+            {
+                { 1, "https://www.youtube.com/watch?v=V75dMMIW2B4" },
+                { 2, "https://www.youtube.com/watch?v=vZ734NWnAHA" },
+                { 3, "https://www.youtube.com/watch?v=mNgwNXKBEW0" },
+                { 4, "https://www.youtube.com/watch?v=EXeTwQWrcwY" },
+                { 5, "https://www.youtube.com/watch?v=TcMBFSGVi1c" },
+                { 6, "https://www.youtube.com/watch?v=lc0UehYemQA" },
+                { 7, "https://www.youtube.com/watch?v=tA_qMdzvCvk" },
+                { 8, "https://www.youtube.com/watch?v=vKQi3bBA1y8" },
+                { 9, "https://www.youtube.com/watch?v=P5ieIbInFpg" },
+                { 10, "https://www.youtube.com/watch?v=naQr0uTrH_s" },
+                { 11, "https://www.youtube.com/watch?v=zSWdZVtXT7E" },
+                { 12, "https://www.youtube.com/watch?v=YoHD9XEInc0" }
+            };
+
+            var movies = await db.Movies.ToListAsync();
+            bool changed = false;
+            foreach (var movie in movies)
+            {
+                if (trailerMap.TryGetValue(movie.Id, out var trailerUrl) && movie.VideoUrl != trailerUrl)
+                {
+                    movie.VideoUrl = trailerUrl;
+                    changed = true;
+                }
+            }
+
+            if (changed)
+            {
+                await db.SaveChangesAsync();
+            }
+        }
+        catch
+        {
+            // Non-critical if table does not exist yet
+        }
+    }
 }
 

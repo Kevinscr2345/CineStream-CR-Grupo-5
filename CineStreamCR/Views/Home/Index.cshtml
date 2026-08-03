@@ -84,10 +84,12 @@
   <section id="player-overlay" class="player-overlay hidden" aria-label="Reproductor de película">
     <div class="player-stage">
       <div class="player-top">
-        <button id="player-collapse" class="icon-button" aria-label="Minimizar reproductor">⌄</button>
-        <div><strong id="player-title"></strong><span id="player-subtitle"></span></div>
+        <button id="player-collapse" class="icon-button" title="Minimizar reproductor" aria-label="Minimizar reproductor">⌄</button>
+        <div class="player-title-box"><strong id="player-title"></strong><span id="player-subtitle"></span></div>
+        <button id="player-close" class="icon-button close-button" title="Cerrar reproductor" aria-label="Cerrar reproductor">✕</button>
       </div>
-      <video id="video-player" preload="metadata" playsinline></video>
+      <video id="video-player" class="hidden" preload="metadata" playsinline></video>
+      <div id="youtube-player" class="youtube-player"></div>
       <div class="player-controls">
         <button id="player-prev" title="Película anterior">⏮</button>
         <button id="player-back" title="Retroceder 10 segundos">↶ 10</button>

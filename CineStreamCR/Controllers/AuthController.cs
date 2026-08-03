@@ -13,6 +13,7 @@ public sealed class AuthController(IUserService userService) : ApiControllerBase
 {
     [AllowAnonymous]
     [HttpPost("login")]
+    [IgnoreAntiforgeryToken]
     public async Task<IActionResult> Login([FromBody] LoginRequest request, CancellationToken ct)
     {
         var response = await userService.ValidateCredentialsAsync(request.Identifier, request.Password, ct);
@@ -32,6 +33,7 @@ public sealed class AuthController(IUserService userService) : ApiControllerBase
 
     [Authorize]
     [HttpPost("logout")]
+    [IgnoreAntiforgeryToken]
     public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
