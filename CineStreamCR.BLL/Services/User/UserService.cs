@@ -14,9 +14,9 @@ public sealed class UserService(ICineRepositorio repository, IMapper mapper) : I
             return Respuesta<UserDto>.Error("Debe ingresar usuario/correo y contraseña.");
 
         var user = await repository.GetUserByIdentifierAsync(identifier, ct);
-        if (user is null) return Respuesta<UserDto>.Error("El usuario indicado no existe.", 404);
+        if (user is null) return Respuesta<UserDto>.Error("El usuario o la contraseña no coincide", 401);
         if (!PasswordHasher.Verify(password, user.PasswordHash))
-            return Respuesta<UserDto>.Error("La contraseña es incorrecta.", 401);
+            return Respuesta<UserDto>.Error("El usuario o la contraseña no coincide", 401);
 
         return Respuesta<UserDto>.Correcta(mapper.Map<UserDto>(user), "Inicio de sesión correcto.");
     }

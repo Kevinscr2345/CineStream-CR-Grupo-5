@@ -169,7 +169,11 @@
       }, { redirectOn401: false });
       await enterApplication(user);
     } catch (error) {
-      dom.loginError.textContent = error.message || 'No fue posible iniciar sesión.';
+      let errorMsg = error.message || 'El usuario no coincide o la contraseña no coincide';
+      if (errorMsg.startsWith('{') || errorMsg.includes('Bad Request') || errorMsg.includes('Ocurrió un error')) {
+        errorMsg = 'El usuario no coincide o la contraseña no coincide';
+      }
+      dom.loginError.textContent = errorMsg;
     }
   }
 
@@ -386,8 +390,8 @@
           <div class="card-actions">
             <button class="btn btn-secondary" data-action="details">Detalles</button>
             ${options.removeFromListId
-              ? `<button class="btn btn-danger" data-action="remove" data-list-id="${options.removeFromListId}">Quitar</button>`
-              : '<button class="btn btn-ghost" data-action="list">＋ Lista</button>'}
+        ? `<button class="btn btn-danger" data-action="remove" data-list-id="${options.removeFromListId}">Quitar</button>`
+        : '<button class="btn btn-ghost" data-action="list">＋ Lista</button>'}
           </div>
         </div>
       </article>`;
@@ -901,7 +905,11 @@
       }
       if (response.status === 204) return null;
       const contentType = response.headers.get('content-type') || '';
-      const data = contentType.includes('application/json') ? await response.json() : await response.text();
+      const isJson = contentType.includes('json');
+      let data = isJson ? await response.json().catch(() => null) : await response.text();
+      if (typeof data === 'string' && data.trim().startsWith('{')) {
+        try { data = JSON.parse(data); } catch { /* keep string */ }
+      }
       if (data && typeof data === 'object' && Object.prototype.hasOwnProperty.call(data, 'esCorrecto')) {
         if (!data.esCorrecto || !response.ok) {
           throw createHttpError(data.mensaje || 'Ocurrió un error.', data.codigo || response.status);
@@ -909,7 +917,12 @@
         return data.dato ?? null;
       }
       if (!response.ok) {
-        const message = typeof data === 'object' ? (data.message || data.title || 'Ocurrió un error.') : (data || 'Ocurrió un error.');
+        let message = 'Ocurrió un error.';
+        if (data && typeof data === 'object') {
+          message = data.mensaje || data.message || (data.title && data.title !== 'Bad Request' ? data.title : null) || 'Ocurrió un error.';
+        } else if (typeof data === 'string' && data.trim() && !data.trim().startsWith('{')) {
+          message = data;
+        }
         throw createHttpError(message, response.status);
       }
       return data;
