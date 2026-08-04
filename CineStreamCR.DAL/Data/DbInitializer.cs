@@ -239,6 +239,7 @@ public static class DbInitializer
             db.People.AddRange(people);
             db.Movies.AddRange(movies);
             await db.SaveChangesAsync();
+            await EnsureYouTubeTrailersAsync(db);
 
             var movieByTitle = movies.ToDictionary(x => x.Title, StringComparer.OrdinalIgnoreCase);
             var genreByName = genres.ToDictionary(x => x.Name, StringComparer.OrdinalIgnoreCase);
@@ -378,7 +379,7 @@ public static class DbInitializer
         };
     }
 
-    private static Movie Movie(int imageIndex, string title, string synopsis, int year, int duration, bool featured, string sourceUrl, string videoUrl)
+    private static Movie Movie(int imageIndex, string title, string synopsis, int year, int duration, bool featured, string sourceUrl, string videoUrl = "")
     {
         var wikiTitle = new Uri(sourceUrl).AbsolutePath.Split("/wiki/", StringSplitOptions.RemoveEmptyEntries).Last();
         var fallback = Uri.EscapeDataString($"/images/posters/movie-{imageIndex}.jpg");
