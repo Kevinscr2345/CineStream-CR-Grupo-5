@@ -291,3 +291,6 @@ public sealed class CineRepositorio(ApplicationDbContext context) : ICineReposit
         return progress;
     }
 }
+
+
+//no abusar de los include

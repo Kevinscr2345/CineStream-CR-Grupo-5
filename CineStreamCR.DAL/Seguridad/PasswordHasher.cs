@@ -42,3 +42,4 @@ public static class PasswordHasher
     }
 }
 
+//no puede ser un número random (salt)
