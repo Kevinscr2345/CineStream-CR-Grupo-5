@@ -799,7 +799,7 @@
     }
   }
 
-  function playYouTubeVideo(videoId) {
+  /*function playYouTubeVideo(videoId) {
     loadYouTubeApi(() => {
       if (!state.ytPlayer) {
         state.ytPlayer = new YT.Player('youtube-player', {
@@ -843,8 +843,64 @@
       }
       startYouTubeTimeUpdater();
     });
-  }
+  }*/
+    function playYouTubeVideo(videoId, startSeconds = 0) {
+        loadYouTubeApi(() => {
+            if (!state.ytPlayer) {
+                state.ytPlayer = new YT.Player('youtube-player', {
+                    videoId: videoId,
+                    playerVars: {
+                        autoplay: 1,
+                        controls: 1,
+                        rel: 0,
+                        modestbranding: 1,
+                        enablejsapi: 1,
+                        start: Math.floor(startSeconds)
+                    },
+                    events: {
+                        onReady: (event) => {
+                            event.target.setVolume(Number(dom.playerVolume.value) * 100);
+                            event.target.playVideo();
+                        },
+                        onStateChange: (event) => {
+                            updatePlayButtons();
 
+                            if (window.YT && event.data === YT.PlayerState.ENDED) {
+                                runUiAction(async () => {
+                                    await savePlaybackProgress(true);
+                                    if (state.currentIndex < state.queue.length - 1) {
+                                        await playNext();
+                                    }
+                                });
+                            }
+                        },
+                        onError: (event) => {
+                            if (state.currentMovie) {
+                                const fallbacks = youtubeFallbackMap[state.currentMovie.id] || [];
+                                const nextId = fallbacks.find(id => id !== state.currentYtId);
+
+                                if (nextId) {
+                                    state.currentYtId = nextId;
+                                    state.ytPlayer.loadVideoById({
+                                        videoId: nextId,
+                                        startSeconds: 0
+                                    });
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                });
+            } else {
+                state.ytPlayer.loadVideoById({
+                    videoId: videoId,
+                    startSeconds: Math.floor(startSeconds)
+                });
+            }
+
+            startYouTubeTimeUpdater();
+        });
+    }
   function startYouTubeTimeUpdater() {
     clearInterval(state.ytTimer);
     state.ytTimer = setInterval(onYouTubeTimeUpdate, 500);
@@ -887,14 +943,38 @@
     dom.playerOverlay.classList.remove('hidden');
     updateQueueButtons();
 
-    const ytId = getYouTubeIdForMovie(movie);
-    state.currentYtId = ytId;
-    if (dom.video) {
-      try { dom.video.pause(); } catch { /* ignore */ }
-      dom.video.classList.add('hidden');
-    }
-    if (dom.youtubePlayer) dom.youtubePlayer.classList.remove('hidden');
-    playYouTubeVideo(ytId);
+      //actualizacion ultima reproduccion por cambio de video por medio de URLs
+      const ytId = getYouTubeIdForMovie(movie);
+      state.currentYtId = ytId;
+
+      if (dom.video) {
+          try { dom.video.pause(); } catch { /* ignore */ }
+          dom.video.classList.add('hidden');
+      }
+
+      if (dom.youtubePlayer) dom.youtubePlayer.classList.remove('hidden');
+
+      let startSeconds = 0;
+
+      try {
+          const progress = await api(
+              `/api/playback/${movie.id}`,
+              {},
+              { showSpinner: false }
+          );
+
+          if (
+              progress &&
+              !progress.isCompleted &&
+              Number(progress.currentSecond) > 0
+          ) {
+              startSeconds = Number(progress.currentSecond);
+          }
+      } catch {
+          // Si no existe progreso, inicia desde el principio.
+      }
+
+      playYouTubeVideo(ytId, startSeconds);
   }
 
   async function onVideoMetadata() {
