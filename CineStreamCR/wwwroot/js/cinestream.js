@@ -158,8 +158,7 @@
         state.ytPlayer.setVolume(vol * 100);
       }
     });
-
-    //CAMBIO
+      //CAMBIO
       dom.playerFullscreen.addEventListener('click', async () => {
           try {
               if (!document.fullscreenElement) {
@@ -174,6 +173,7 @@
       });
 
       //
+   
     dom.video.addEventListener('loadedmetadata', onVideoMetadata);
     dom.video.addEventListener('timeupdate', onVideoTimeUpdate);
     dom.video.addEventListener('play', updatePlayButtons);
