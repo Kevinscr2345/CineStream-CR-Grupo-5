@@ -158,12 +158,22 @@
         state.ytPlayer.setVolume(vol * 100);
       }
     });
-    dom.playerFullscreen.addEventListener('click', async () => {
-      try {
-        const target = isYouTubePlaying() ? (dom.youtubePlayer || dom.playerOverlay) : dom.video;
-        await target.requestFullscreen();
-      } catch { toast('No fue posible activar pantalla completa.', 'error'); }
-    });
+
+    //CAMBIO
+      dom.playerFullscreen.addEventListener('click', async () => {
+          try {
+              if (!document.fullscreenElement) {
+                  await dom.playerOverlay.querySelector('.player-stage').requestFullscreen();
+              } else {
+                  await document.exitFullscreen();
+              }
+          } catch (error) {
+              console.error('Error al cambiar pantalla completa:', error);
+              toast('No fue posible activar pantalla completa.', 'error');
+          }
+      });
+
+      //
     dom.video.addEventListener('loadedmetadata', onVideoMetadata);
     dom.video.addEventListener('timeupdate', onVideoTimeUpdate);
     dom.video.addEventListener('play', updatePlayButtons);
